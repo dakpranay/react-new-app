@@ -7,7 +7,7 @@ export class Newsitem extends Component {
         let {title,description,imageurl,newsurl}=this.props
         return (
             <div className='my-3'>
-                <div className="card" style={{width: "18rem"}}>
+                <div className="card" >
                     <img className="card-img-top" src={!imageurl?"https://imgeng.jagran.com/images/2023/jul/sony-project-q-gaming-console-headset1690113284007.jpg":imageurl} alt="Card image cap"/>
                         <div className="card-body">
                             <h5 className="card-title">{title}</h5>
