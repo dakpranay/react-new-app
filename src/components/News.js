@@ -20,13 +20,19 @@ export class News extends Component {
 
     }
 
-    constructor() {
+    captilized =(string)=>{
+        return string.charAt(0).toUpperCase()+ string.slice(1)
+
+    }
+
+    constructor(props) {
         super()
         this.state = {
             articles: [],
             loading: false,
             page:1
         }
+        document.title= `${this.captilized(props.category)}-NewsMonkey`
     }
 
     handlePreviousClick = async () => {
@@ -70,7 +76,7 @@ export class News extends Component {
     render() {
         return (
             <div className='container my-3'>
-                <h2  className='text-center'>News</h2>
+                <h2  className='text-center'>NEWSMONKEY - Top {this.captilized(this.props.category)} Headlines  </h2>
                 {this.state.loading && <Spinner/>}
                 <div className="row">
                     { !this.state.loading && this.state.articles.map((element) => {
